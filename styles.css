@@ -194,6 +194,10 @@ main .download{
 -moz-box-shadow: 1px 10px 26px -1px rgba(191,121,121,0.75);
 }
 
+.download .btn:hover{
+    opacity: .7;
+}
+
 .download .btn+.btn{
     margin-inline-start: .5em;
 }
@@ -227,6 +231,14 @@ footer nav{
     display: flex;
     flex-direction: column;
     gap: 1em;
+}
+
+footer :is(a svg, a){
+    color: var(--dark-grayish-blue);
+}
+
+footer :is(a:hover, a:hover svg){
+    color: var(--strong-cyan);
 }
 
 footer nav.social{
