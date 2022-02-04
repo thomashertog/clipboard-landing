@@ -1,0 +1,237 @@
+@font-face {
+    font-family: "Bai Jamjuree";
+    src: url('fonts/BaiJamjuree-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Bai Jamjuree";
+    src: url('fonts/BaiJamjuree-SemiBold.ttf');
+    font-weight: 600;
+}
+
+:root{
+    --strong-cyan: hsl(171, 66%, 44%);
+    --light-blue: hsl(233, 100%, 69%);
+
+    --dark-grayish-blue: hsl(210, 10%, 33%);
+    --grayish-blue: 201, 11%, 66%;
+}
+
+a,abbr{text-decoration: none;}
+img{max-width: 100%;}
+*{margin:0;}
+ul {
+    list-style: none;
+    padding:0;
+  }
+  
+  ul li::before {
+    content: "\200B";
+  }
+  
+
+header{color: var(--dark-grayish-blue);}
+
+p{
+    color: hsl(var(--grayish-blue));
+}
+
+body{
+    font-size: 18px;
+    font-family: "Bai Jamjuree";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}
+
+body > header{
+    background-image: url('images/bg-header-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block-start: 5em;
+    gap: 2em;
+}
+
+@media screen and (min-width: 600px) {
+    body > header{
+        background-image: url('images/bg-header-desktop.png');
+    }
+}
+
+body > header > * {
+    max-width: 90%;
+}
+
+body > header > p{
+    max-width: min(40ch, 90%);
+}
+
+main{
+    width: max(17em, 80vw);
+}
+
+img:not([src^="images/icon-"]){
+    margin-block: 3em;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.download{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+@media screen and (min-width: 800px) {
+    .download{
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .track div{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 4fr 3fr;
+        gap: 2em;
+        overflow: hidden;
+    }
+
+    .track div img{
+        position: relative;
+        left: -4em;
+    }
+
+    .track div ul{
+        margin-block: 2em;
+    }
+
+    .supercharge ul{
+        display: flex;
+        margin-block-start: 3em;
+        gap: 2em;
+    }
+
+    .supercharge li{
+        flex-basis: 100px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .supercharge li img{
+        order: -1;
+        max-width: fit-content;
+    }
+
+    .supercharge li p{
+        margin-block: 1em;
+    }
+
+    .supercharge li:not(:first-child) img{
+        padding-block: .25em;
+    }
+
+    .partners ul{
+        display: flex;
+        gap: min(5em, 5vw);
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer{
+        display: flex;
+        padding: min(2em, 10%);
+        gap: 1em;
+        box-sizing: border-box;
+        align-items: center;
+    }
+
+    footer img[src*=logo]{
+        width: 50px;
+        margin: 0;
+    }
+
+    footer nav:not(.social){
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(7em, 1fr));
+        flex-grow: 1;
+        justify-items: start;
+    }
+
+    footer nav:not(.social) a:nth-child(n+4){
+        grid-row: 2;
+    }
+}
+
+main .download{
+    margin-block-start: 3em;
+}
+
+.download .btn{
+    border-radius: 3em;
+    padding: .5em 2em;
+    color: white;
+    box-shadow: 1px 10px 26px -1px rgba(191,121,121,0.75);
+-webkit-box-shadow: 1px 10px 26px -1px rgba(191,121,121,0.75);
+-moz-box-shadow: 1px 10px 26px -1px rgba(191,121,121,0.75);
+}
+
+.download .btn+.btn{
+    margin-inline-start: .5em;
+}
+
+.download .ios{
+    background-color: var(--strong-cyan);
+    box-shadow: 0px 10px 30px -10px var(--strong-cyan);
+    
+}
+
+.download .mac{
+    background-color: var(--light-blue);
+    box-shadow: 0px 10px 30px -10px var(--light-blue);
+}
+
+section{
+    margin-block-start: 5em;
+}
+
+.partners img{
+    margin-block: 1em;
+}
+
+footer{
+    margin-block-start: 5em;
+    background-color: hsla(var(--grayish-blue), .2);
+    width: 100%;
+}
+
+footer nav{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+footer nav.social{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-block: 2em;
+}
