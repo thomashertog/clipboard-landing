@@ -18,9 +18,10 @@
     --grayish-blue: 201, 11%, 66%;
 }
 
+*{margin:0;}
 a,abbr{text-decoration: none;}
 img{max-width: 100%;}
-*{margin:0;}
+
 ul {
     list-style: none;
     padding:0;
@@ -40,16 +41,16 @@ p{
 body{
     font-size: 18px;
     font-family: "Bai Jamjuree";
+    
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: enter;
     text-align: center;
     margin: 0;
 }
 
 body > header{
     background-image: url('images/bg-header-mobile.png');
-    background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     display: flex;
@@ -75,6 +76,7 @@ body > header > p{
 
 main{
     width: max(17em, 80vw);
+    margin: 0 auto;
 }
 
 img:not([src^="images/icon-"]){
@@ -138,7 +140,6 @@ img:not([src^="images/icon-"]){
 
     .supercharge li img{
         order: -1;
-        max-width: fit-content;
     }
 
     .supercharge li p{
@@ -190,22 +191,15 @@ main .download{
     padding: .5em 2em;
     color: white;
     box-shadow: 1px 10px 26px -1px rgba(191,121,121,0.75);
--webkit-box-shadow: 1px 10px 26px -1px rgba(191,121,121,0.75);
--moz-box-shadow: 1px 10px 26px -1px rgba(191,121,121,0.75);
 }
 
 .download .btn:hover{
     opacity: .7;
 }
 
-.download .btn+.btn{
-    margin-inline-start: .5em;
-}
-
 .download .ios{
     background-color: var(--strong-cyan);
     box-shadow: 0px 10px 30px -10px var(--strong-cyan);
-    
 }
 
 .download .mac{
@@ -227,7 +221,7 @@ footer{
     width: 100%;
 }
 
-footer nav{
+footer :is(nav, .social){
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -241,7 +235,7 @@ footer :is(a:hover, a:hover svg){
     color: var(--strong-cyan);
 }
 
-footer nav.social{
+footer .social{
     flex-direction: row;
     justify-content: center;
     align-items: center;
